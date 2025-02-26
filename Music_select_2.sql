@@ -4,7 +4,7 @@ WHERE duration IN (SELECT max(duration) FROM track);
 
 SELECT name 
 FROM track 
-WHERE duration >= '00:03:50';
+WHERE duration >= '00:03:30';
 
 SELECT name
 FROM collection 
@@ -16,7 +16,7 @@ WHERE name NOT LIKE '% %';
 
 SELECT name 
 FROM track 
-WHERE string_to_array(lower(name), ' ') && ARRAY['мой', 'мой %', '% мой', '%мой%', 'my', '% my', 'my %', '%my%'];
+WHERE string_to_array(lower(name), ' ') && ARRAY['мой', 'my'];
 
 
 

@@ -2,10 +2,9 @@ SELECT genre_id, count(*) FROM artistgenres
 GROUP BY genre_id
 ORDER BY count(*) DESC;
 
-SELECT a.name, count(t.name) FROM album a
+SELECT count(t.name) FROM album a
 JOIN track t ON t.album_id = a.id
-WHERE a."year"  IN (2019,2020)
-GROUP BY a."name";
+WHERE a."year"   BETWEEN 2019 AND 2020;
 
 SELECT album_id, avg(duration) avr_duration FROM track t
 GROUP BY album_id 
